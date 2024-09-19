@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score Board</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+</style>
+<body class="h-screen flex justify-center items-center">
+    <main class="w-[40rem] h-[30rem] font-medium bg-gray-500 border-2 border-red-500 p-5">
+        <span class="block text-3xl text-blue-800 text-center mb-5">BANG DIEM CUA EM</span>
+        <form action="" id="score" class="space-y-5">
+            <div>
+                <label for="semester1">Semester 1:</label>
+                <input type="number" id="semester1" min="0" max="10" required>
+            </div>
+            <div>
+                <label for="semester2">Semester 2:</label>
+                <input type="number" id="semester2" min="0" max="10" required>
+            </div>
+            <div>
+                <label for="year">Year:</label>
+                <select id="year" class="text-red-500" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+    
+            <div>
+                <label for="summarise">Summarise:</label>
+                <input type="text" id="summarise" disabled>
+            </div>
+    
+            <p id="classification">Xep Loai</p>
+    
+            <button class="bg-white" onclick="calculate(event)">OK</button>
+            <button class="bg-white" type="reset">Cancel</button>
+        </form>
+    </main>
+</body>
+
+<script>
+    function calculate(event) {
+        event.preventDefault(); // Prevents form submission
+        
+        const semester1 = parseFloat(document.getElementById('semester1').value);
+        const semester2 = parseFloat(document.getElementById('semester2').value);
+        const year = parseInt(document.getElementById('year').value);
+
+        if (isNaN(semester1) || isNaN(semester2) || isNaN(year)) {
+            alert("Vui lòng nhập đầy đủ thông tin");
+            return;
+        }
+
+        const summarise = (semester1 + semester2 * year) / (year + 1);
+        document.getElementById('summarise').value = summarise.toFixed(2);
+
+        let classification = "";
+        if (summarise >= 8.5) {
+            classification = "Hoc sinh gioi";
+        } else if (summarise >= 6.5) {
+            classification = "Hoc sinh kha";
+        } else if (summarise >= 5.0) {
+            classification = "Hoc sinh trung binh";
+        } else {
+            classification = "Hoc sinh yeu";
+        }
+        document.getElementById("classification").innerText = classification;
+    }
+</script>
+</html>
