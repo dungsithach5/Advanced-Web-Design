@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Karla", sans-serif;
+    }
+</style>
+<body>
+    <!-- navbar -->
+    <nav class="flex justify-between items-center p-4 border-b-2 border-black bg-[#FEFAF9]">
+        <h1 class="w-full font-medium text-4xl pb-2  pr-14 border-b-2 border-black">WOMEN'S PRODUCTS</h1>
+        <ul class="w-full font-medium px-24 flex justify-start space-x-10 text-gray-800">
+            <a href=""><li>All</li></a>
+            <a href=""><li>Clothings</li></a>
+            <a href=""><li>Bags</li></a>
+            <a href=""><li>Shoes</li></a>
+            <a href=""><li>Watches</li></a>
+            <a href=""><li>Googles</li></a>
+        </ul>
+        <div class="w-full"></div>
+    </nav>
+
+    <div id="container" class="flex bg-[#FEFAF9]">
+        <!-- divleft -->
+        <div class="w-full flex">
+            <div class="w-2/4 h-auto p-7 flex flex-col space-y-3">
+                <img src="img/bags.jpg" alt="" class="object-cover">
+                <span class="font-medium py-2 border-b-2 border-gray-100 text-xl">Women Bags</span>
+                <span class="font-bold">&euro;100.00</span>
+                <s class="font-bold">&euro;50.00</s>
+                <button class="w-2/4 py-2 bg-red-500 text-white font-medium rounded-md ml-auto">ADD TO CART</button>
+            </div>
+            <div class="w-2/4 h-auto p-7 flex flex-col space-y-3">
+                <img src="img/google.jpg" alt="" class="object-cover">
+                <span class="font-medium py-2 border-b-2 border-gray-100 text-xl">Google</span>
+                <span class="font-bold">&euro;25.00</span>
+                <span class="font-bold">&nbsp;</span>
+                <button class="w-2/4 py-2 bg-red-500 text-white font-medium rounded-md ml-auto">ADD TO CART</button>
+            </div>
+        </div>
+        
+        <!-- divright -->
+        <div class="relative z-10 w-full flex justify-center items-center">
+            <div class="absolute inset-0 bg-black opacity-15"></div>
+            <div class="absolute flex flex-col text-white space-y-6">
+                <span class="text-4xl">FOR WOMEN</span>
+                <button class="bg-red-600 p-3 font-medium hover:bg-red-500">VIEW ALL</button>
+            </div>
+            <img src="/img/pexels-athena.jpg" alt="" class="object-cover">
+        </div>
+    </div>
+</body>
+</html>
