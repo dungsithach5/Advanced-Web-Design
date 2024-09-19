@@ -19,11 +19,11 @@
         <form action="" id="score" class="space-y-5">
             <div>
                 <label for="semester1">Semester 1:</label>
-                <input type="number" id="semester1" min="0" max="10" required>
+                <input type="text" id="semester1" min="0" max="10" required>
             </div>
             <div>
                 <label for="semester2">Semester 2:</label>
-                <input type="number" id="semester2" min="0" max="10" required>
+                <input type="text" id="semester2" min="0" max="10" required>
             </div>
             <div>
                 <label for="year">Year:</label>
@@ -42,15 +42,15 @@
     
             <p id="classification">Xep Loai</p>
     
-            <button class="bg-white" onclick="calculate(event)">OK</button>
-            <button class="bg-white" type="reset">Cancel</button>
+            <button class="bg-white px-4" onclick="calculate(event)">OK</button>
+            <button class="bg-white px-4" type="reset">Cancel</button>
         </form>
     </main>
 </body>
 
 <script>
     function calculate(event) {
-        event.preventDefault(); // Prevents form submission
+        event.preventDefault();
         
         const semester1 = parseFloat(document.getElementById('semester1').value);
         const semester2 = parseFloat(document.getElementById('semester2').value);
@@ -66,13 +66,13 @@
 
         let classification = "";
         if (summarise >= 8.5) {
-            classification = "Hoc sinh gioi";
+            classification = "HOC SINH GIOI";
         } else if (summarise >= 6.5) {
-            classification = "Hoc sinh kha";
+            classification = "HOC SINH KHA";
         } else if (summarise >= 5.0) {
-            classification = "Hoc sinh trung binh";
+            classification = "HOC SINH TRUNG BINH";
         } else {
-            classification = "Hoc sinh yeu";
+            classification = "HOC SINH YEU";
         }
         document.getElementById("classification").innerText = classification;
     }
