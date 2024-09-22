@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score Board</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+</style>
+<body class="bg-[#F8F8F7] h-screen flex justify-center items-center">
+    <main class="bg-white w-[35rem] h-[30rem] font-medium rounded-2xl">
+        <div class="w-full h-auto flex flex-col justify-center items-center mt-8 space-y-14">   
+            <span class="block text-4xl text-blue-800 text-center">BANG DIEM CUA EM</span>
+            <form action="" id="score" class="space-y-5">
+                <div>
+                    <label for="semester1">Semester 1:</label>
+                    <input type="text" id="semester1" min="0" max="10" required class="bg-gray-100">
+                </div>
+                <div>
+                    <label for="semester2">Semester 2:</label>
+                    <input type="text" id="semester2" min="0" max="10" required class="bg-gray-100">
+                </div>
+                <div>
+                    <label for="year">Year:</label>
+                    <select id="year" class="text-red-500" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+        
+                <div>
+                    <label for="summarise">Summarise:</label>
+                    <input type="text" id="summarise" class="bg-white" disabled>
+                </div>
+        
+                <p id="classification" class="text-2xl">&nbsp;</p>
+                
+                <div class="w-full flex justify-between">
+                    <button class="bg-blue-700 text-white px-4 py-2 rounded " onclick="calculate(event)">OK</button>
+                    <button class="bg-red-500 text-white px-4 py-2 rounded " type="reset">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+
+<script>
+    function calculate(event) {
+        event.preventDefault();
+        
+        const semester1 = parseFloat(document.getElementById('semester1').value);
+        const semester2 = parseFloat(document.getElementById('semester2').value);
+        const year = parseInt(document.getElementById('year').value);
+
+        if (isNaN(semester1) || isNaN(semester2) || isNaN(year)) {
+            alert("Vui lòng nhập đầy đủ thông tin");
+            return;
+        }
+
+        const summarise = (semester1 + semester2 * year) / (year + 1);
+        document.getElementById('summarise').value = summarise.toFixed(2);
+
+        let classification = "";
+        if (summarise >= 8.5) {
+            classification = "HOC SINH GIOI";
+        } else if (summarise >= 6.5) {
+            classification = "HOC SINH KHA";
+        } else if (summarise >= 5.0) {
+            classification = "HOC SINH TRUNG BINH";
+        } else {
+            classification = "HOC SINH YEU";
+        }
+        document.getElementById("classification").innerText = classification;
+    }
+</script>
+</html>
