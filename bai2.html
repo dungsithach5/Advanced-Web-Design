@@ -17,31 +17,32 @@
 </style>
 <body class="bg-[#EAE5DA] w-full h-screen flex justify-center items-center">
     <section class="bg-white min-w-[1200px] min-h-[600px] p-7 rounded-xl space-y-5">
+        <span class="text-4xl font-semibold">Product's Customer</span>
         <div class="w-full h-auto grid grid-cols-3 font-medium">
             <div>
-                <label for="fname">Fullname Customer</label>
+                <label for="fname">Fullname Customer:</label>
                 <br>
                 <input type="text" id="fname" class="border-2 rounded">
             </div>
             <div>
-                <label for="idpro">Id Profile</label>
+                <label for="idpro">Id Product:</label>
                 <br>
                 <input type="text" id="idpro" class="border-2 rounded">
             </div>
             <div>
-                <label for="namepro">Name Profile</label>
+                <label for="namepro">Name Product:</label>
                 <br>
                 <input type="text" id="namepro" class="border-2 rounded">
             </div>
         </div>
         <div class="w-full h-auto grid grid-cols-3 font-medium">
             <div>
-                <label for="qty">Quantity Profile</label>
+                <label for="qty">Quantity:</label>
                 <br>
                 <input type="text" id="qty" class="border-2 rounded">
             </div>
             <div>
-                <label for="pri">Price Profile</label>
+                <label for="pri">Price:</label>
                 <br>
                 <input type="text" id="pri" class="border-2 rounded">
             </div>
@@ -52,7 +53,7 @@
             <button type="button" class="px-4 py-1 rounded bg-gray-200 hover:bg-[#F67345] hover:text-white" onclick="reset()">Reset</button>
         </div>
         <table class="w-full">
-            <thead class="text-center">
+            <thead class="text-center bg-gray-100 border-2">
                 <tr>
                     <th>No.</th>
                     <th>Name</th>
@@ -85,7 +86,7 @@
             for (var i in arr) {
                 var n = i;
                 n++;
-                var bgColor = (n%2==0) ? 'bg-gray-200' : 'bg-white';
+                var bgColor = (n%2==0) ? 'bg-gray-100' : 'bg-white';
                 html += 
                 `
                     <tr class="font-medium ${bgColor}">
