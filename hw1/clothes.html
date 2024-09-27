@@ -70,20 +70,22 @@
         row += `<td>` + qty + `</td>`;
         row += `<td>` + price + `</td>`;
         row += `<td>` + sub + `</td>`;
-        row += `<td>`;
+        row += `</tr>`;
 
         var total = document.getElementById('total').innerHTML;
 
         total = parseInt(total) + parseInt(sub);
 
-        var row_total = `<tr>`;
-                row_total += `<td>Total</td>`;
-                row_total += `<td></td>`;
-                row_total += `<td></td>`;
-                row_total += `<td></td>`;
-                row_total += `<td id='total'>`+ total + `</td>`;
-                row_total += `</tr>`;
-
+        var row_total = 
+        `
+            <tr>
+                <td>Total</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td id="total">${total}</td>
+            </tr>
+        `;
         document.getElementById('thead').innerHTML += row;
         document.getElementById('tbody').innerHTML = row_total;
     }

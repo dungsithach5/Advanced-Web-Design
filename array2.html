@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+assv
+</head>
+<body>
+    <h2>Javascript Array</h2>
+
+    <p>The best way to loop through an array is using a standard for loop:</p>
+    <p id="demo"></p>
+
+    <button onclick="myFunction()">Try it</button>
+    <br>
+    <br>
+    <label for="">Ten</label>
+    <br>
+    <input type="text" id="name">
+    <br>
+    <label for="">Ten cua ban la</label>
+    <br>
+    <input type="text" id="hienthi" disabled>
+    <br>
+    <button onclick="AddArray()">OK</button>
+</body>
+<script>
+    var fruits = ["Banana","Orange","Apple","Mango"];
+    text = `<ul>`;
+    for (let i = 0; i < fruits.length; i++) {
+        text+=
+        `
+            <li>${fruits[i]}</li>
+        `
+    }
+    text += `</ul>`;
+    document.getElementById("demo").innerHTML = text;
+
+    function myFunction() {
+        fruits.push("Lemon");
+        document.querySelector('#demo').innerHTML = fruits;
+    }
+
+    var array = [];
+
+    function AddArray() {
+        var name = document.querySelector("#name").value;
+        array.push(name);
+        document.querySelector("#hienthi").value = array;
+    }
+</script>
+</html>

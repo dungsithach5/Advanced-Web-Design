@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Montserrat", sans-serif;
+    }
+</style>
+<body>
+    <header class="w-full h-16 flex justify-between items-center bg-blue-600">
+        <span>Shop debug</span>
+        <nav>
+            <ul class="flex justify-between space-x-6">
+                <a href=""><li>Trang Chủ</li></a>
+                <a href=""><li>Thời Trang Nam</li></a>
+                <a href=""><li>Thời Trang Nữ</li></a>
+                <a href=""><li>Tin Tức</li></a>
+            </ul>
+        </nav>
+        <div>
+            <input type="text" name="" id="" value="Tìm Kiếm...">
+            <button>Tìm Kiếm</button>
+        </div>
+    </header>
+    <section class="mt-10 grid grid-cols-4 p-4" id="boxcard"></section>
+</body>
+<script>
+    var male = [
+        {
+            id:"KO0002",
+            prdname:"Quần Jean nữ",
+            sell:269.000,
+            orgprice:370.000,
+            url:"img/bags.jpg",
+        },
+        {
+            id:"VN0002",
+            prdname:"Áo khoác nữ",
+            sell:249.000,
+            orgprice:369.000,
+            url:"img/google.jpg",
+        },
+        {
+            id:"US0002",
+            prdname:"Áo phông nữ",
+            sell:159.000,
+            orgprice:390.000,
+            url:"img/pexels-athena.jpg",
+        },
+        {
+            id:"US0002",
+            prdname:"Áo phông nữ",
+            sell:159.000,
+            orgprice:390.000,
+            url:"img/pexels-athena.jpg",
+        },
+    ];
+
+    html = '';
+    for(var i in male) {
+        html+=
+        `
+            <div class="w-96 h-[36rem] rounded-lg border-2">
+                <div class="w-auto h-[25rem] rounded-lg">
+                    <img src="${male[i].url}" alt="" class="w-full h-full object-cover rounded-t-md">
+                </div>
+                <div class="flex flex-col p-4 space-y-5">
+                    <span class="text-xl font-semibold">${male[i].prdname} - ${male[i].id}</span>
+                    <span class="text-lg">${male[i].sell.toFixed(3)} vnđ - <s>${male[i].orgprice.toFixed(3)} vnđ</s></span>
+                    <button class="mr-auto text-lg text-white bg-red-600 rounded p-2">Đặt Mua</button>
+                </div>
+            </div>
+        `
+    }
+    document.querySelector('#boxcard').innerHTML = html;
+</script>
+</html>
