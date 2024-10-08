@@ -24,35 +24,35 @@ var hotel = [
         id:"R04",
         name:"Four Seasons",
         roomtype:"Đôi",
-        img : "hotel1.webp",
+        img : "hotel2.webp",
         price:564000,
     },
     {
         id:"R05",
         name:"Hyatt Regency",
         roomtype:"Đơn",
-        img : "hotel1.webp",
+        img : "hotel5.jpg",
         price:654000,
     },
     {
         id:"R06",
         name:"InterContinental",
         roomtype:"Đơn",
-        img : "hotel1.webp",
+        img : "hotel6.webp",
         price:123000,
     },
     {
         id:"R07",
         name:"Waldorf Astoria",
         roomtype:"Đơn",
-        img : "hotel1.webp",
+        img : "hotel7.webp",
         price:345000,
     },
     {
         id:"R08",
         name:"Mandarin Oriental",
         roomtype:"Đơn",
-        img : "hotel1.webp",
+        img : "hotel6.webp",
         price:258000,
     },
 ];
@@ -83,7 +83,7 @@ var listLocal = function(){
                       data-id="${data.id}" data-name="${data.name}" 
                       data-img="${data.img}" data-price="${data.price}" 
                       onclick="tks()">
-                    <a><i class="fas fa-cart-plus"></i></a>
+                    <a href="product-detail.html?code=${data.id}"><i class="fas fa-cart-plus"></i></a>
                 </span>
             </div>
         </div>`;

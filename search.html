@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+    <h1 class="text-2xl font-bold mb-4">Product search by name</h1>
+    <form action="" id="searchForm" class="mb-4">
+        <input type="text" name="" id="productName" placeholder="Enter product name" class="border p-2 rounded" required>
+        <button type="submit" class="bg-blue-500 text-white p-2 rounded">search</button>
+    </form>
+    <div id="result" class="mt-4"></div>
+</body>
+<script>
+    // Sample data to be stored in localStorage
+const sampleProducts = [
+    { code: 'P001', name: 'Product One' },
+    { code: 'P002', name: 'Product Two' },
+    { code: 'P003', name: 'Product Three' }
+    ];
+
+    // Store sample data in localStorage
+    localStorage.setItem("products", JSON.stringify(sampleProducts));
+
+    document.getElementById('searchForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('productName').value.toLowerCase();
+
+    const products = JSON.parse(localStorage.getItem('products'));
+    const foundProducts = products.filter(p => p.name.toLowerCase().includes(name));
+
+    const resultDiv = document.getElementById('result');
+
+    if (foundProducts.length > 0) {
+        resultDiv.innerHTML = foundProducts.map(p => `<p class="text-green-600">Found: ${p.name} (Code: ${p.code})</p>`).join('');
+    } else {
+        resultDiv.innerHTML = `<p class="text-red-600">No products found.</p>`;
+    }
+    });
+</script>
+</html>
