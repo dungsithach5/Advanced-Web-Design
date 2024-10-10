@@ -7,6 +7,7 @@ var productAdmin = function(){
             <td>${data.id}</td>
             <td>${data.name}</td>
             <td>${data.roomtype}</td>
+            <td>${data.description}</td>
             <td><img src="../img/${data.img}" alt="" style="width: 50px;"></td>
             <td>${data.price}</td>
             <td>

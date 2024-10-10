@@ -14,18 +14,19 @@ function displayProductDetail() {
     if (product) {
         const productDetail = document.getElementById('productDetail');
         productDetail.innerHTML = `
-            <div class="col-lg-3 col-md-6 col-sm-6 col-6 mt-3">
-                <div class="card product p-2" style="width:auto">
-                    <img class="card-img-top" src="img/${product.img}" alt="...">
-                    <div class="card-title product-title text-center h5">${product.name}</div>
-                    <div class="price text-center h6">${product.price}₫</div>
-                    <span class="text-center add-to-cart btn btn-outline-warning add-cart" 
-                        data-id="${product.id}" data-name="${product.name}" 
-                        data-img="${product.img}" data-price="${product.price}" 
-                        onclick="tks()">
-                    </span>
-                </div>
+            <div class="bg-black w-2/4 min-h-[800px] rounded-2xl">
+                <img src="img/${product.img}" alt="" class="object-fill rounded-2xl">
             </div>
+            <span class="w-2/4 p-10">
+                <div class="flex justify-between items-center">
+                    <h1 class="text-3xl font-medium">${product.name}</h1>
+                    <button class="bg-[#E0F3CA] p-3 px-6 rounded-md font-medium text-lg">${product.price.toFixed(3)} VNĐ</button>
+                </div>
+                <p class="mt-4">USA</p>
+                <p class="text-lg font-medium mt-16">Summary</p>
+                <p>${product.description}</p>
+                <p class="text-lg font-medium mt-16">Details</p>
+            </span>
             `;
     } else {
         console.error('Sản phẩm không tồn tại');
