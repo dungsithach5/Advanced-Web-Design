@@ -1,7 +1,14 @@
-const map = new Map();
+const employeeSalaries = new Map();
+employeeSalaries.set('Alice', 5000);
+employeeSalaries.set('Mark', 7000);
+employeeSalaries.set('Tom', 4500);
 
-map.set('name', 'John');
-map.set('age', 30);
-map.set('country', 'USA');
+console.log(`Mark's Salary: ${employeeSalaries.get('Mark')}`);
 
-console.log(map);
+console.log(`Has Alice: ${employeeSalaries.has('Alice')}`); 
+
+employeeSalaries.delete('Tom');
+
+employeeSalaries.forEach((salary, employee) => {
+    console.log(`${employee}: $${salary}`);
+});

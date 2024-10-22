@@ -1,14 +1,14 @@
-const employeeSalaries = new Map();
-employeeSalaries.set('Alice', 5000);
-employeeSalaries.set('Mark', 7000);
-employeeSalaries.set('Tom', 4500);
+const mySet = new Set([1, 2, 3, 4, 5]);
 
-console.log(`Mark's Salary: ${employeeSalaries.get('Mark')}`);
+mySet.add(6); // thêm phần tử
 
-console.log(`Has Alice: ${employeeSalaries.has('Alice')}`); 
+// kiểm tra tồn tại
+console.log("Has 4:", mySet.has(4));
+console.log("Has 10:", mySet.has(10));
 
-employeeSalaries.delete('Tom');
+// Xóa phần tử
+mySet.delete(3);
+console.log("Object sau khi xóa", mySet);
 
-employeeSalaries.forEach((salary, employee) => {
-    console.log(`${employee}: $${salary}`);
-});
+// kích thước của mảng
+console.log("Set size:", mySet.size); 
