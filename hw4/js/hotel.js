@@ -23,6 +23,54 @@ var hotel = [
         price:350.000,
         description:"The Ritz-Carlton is a luxury hotel renowned for its elegance, exceptional service, and refined sophistication. Located in major cities and exotic destinations worldwide, The Ritz-Carlton brand is synonymous with opulence, offering lavish accommodations with meticulously designed interiors, state-of-the-art amenities, and stunning views. Each hotel is characterized by its blend of classic and contemporary styles, creating a warm, inviting atmosphere. Guests can enjoy world-class dining, rejuvenating spa treatments, and personalized services. The attention to detail, commitment to excellence, and unforgettable guest experiences set The Ritz-Carlton apart as a premier destination for discerning travelers."
     },
+    {
+        id:"R01",
+        name:"The Ritz-Carlton",
+        roomtype:"Đơn",
+        img : "hotel1.webp",
+        price:122.000,
+        description:"The Ritz-Carlton is a luxury hotel renowned for its elegance, exceptional service, and refined sophistication. Located in major cities and exotic destinations worldwide, The Ritz-Carlton brand is synonymous with opulence, offering lavish accommodations with meticulously designed interiors, state-of-the-art amenities, and stunning views. Each hotel is characterized by its blend of classic and contemporary styles, creating a warm, inviting atmosphere. Guests can enjoy world-class dining, rejuvenating spa treatments, and personalized services. The attention to detail, commitment to excellence, and unforgettable guest experiences set The Ritz-Carlton apart as a premier destination for discerning travelers."
+    },
+    {
+        id:"R02",
+        name:"Marriott Marquis",
+        roomtype:"Đơn",
+        img : "hotel2.webp",
+        price:400.000,
+        description:"The Ritz-Carlton is a luxury hotel renowned for its elegance, exceptional service, and refined sophistication. Located in major cities and exotic destinations worldwide, The Ritz-Carlton brand is synonymous with opulence, offering lavish accommodations with meticulously designed interiors, state-of-the-art amenities, and stunning views. Each hotel is characterized by its blend of classic and contemporary styles, creating a warm, inviting atmosphere. Guests can enjoy world-class dining, rejuvenating spa treatments, and personalized services. The attention to detail, commitment to excellence, and unforgettable guest experiences set The Ritz-Carlton apart as a premier destination for discerning travelers."
+    },
+    {
+        id:"R03",
+        name:"Hilton Garden Inn",
+        roomtype:"Đôi",
+        img : "hotel3.webp",
+        price:350.000,
+        description:"The Ritz-Carlton is a luxury hotel renowned for its elegance, exceptional service, and refined sophistication. Located in major cities and exotic destinations worldwide, The Ritz-Carlton brand is synonymous with opulence, offering lavish accommodations with meticulously designed interiors, state-of-the-art amenities, and stunning views. Each hotel is characterized by its blend of classic and contemporary styles, creating a warm, inviting atmosphere. Guests can enjoy world-class dining, rejuvenating spa treatments, and personalized services. The attention to detail, commitment to excellence, and unforgettable guest experiences set The Ritz-Carlton apart as a premier destination for discerning travelers."
+    },
+    {
+        id:"R01",
+        name:"The Ritz-Carlton",
+        roomtype:"Đơn",
+        img : "hotel1.webp",
+        price:122.000,
+        description:"The Ritz-Carlton is a luxury hotel renowned for its elegance, exceptional service, and refined sophistication. Located in major cities and exotic destinations worldwide, The Ritz-Carlton brand is synonymous with opulence, offering lavish accommodations with meticulously designed interiors, state-of-the-art amenities, and stunning views. Each hotel is characterized by its blend of classic and contemporary styles, creating a warm, inviting atmosphere. Guests can enjoy world-class dining, rejuvenating spa treatments, and personalized services. The attention to detail, commitment to excellence, and unforgettable guest experiences set The Ritz-Carlton apart as a premier destination for discerning travelers."
+    },
+    {
+        id:"R02",
+        name:"Marriott Marquis",
+        roomtype:"Đơn",
+        img : "hotel2.webp",
+        price:400.000,
+        description:"The Ritz-Carlton is a luxury hotel renowned for its elegance, exceptional service, and refined sophistication. Located in major cities and exotic destinations worldwide, The Ritz-Carlton brand is synonymous with opulence, offering lavish accommodations with meticulously designed interiors, state-of-the-art amenities, and stunning views. Each hotel is characterized by its blend of classic and contemporary styles, creating a warm, inviting atmosphere. Guests can enjoy world-class dining, rejuvenating spa treatments, and personalized services. The attention to detail, commitment to excellence, and unforgettable guest experiences set The Ritz-Carlton apart as a premier destination for discerning travelers."
+    },
+    {
+        id:"R03",
+        name:"Hilton Garden Inn",
+        roomtype:"Đôi",
+        img : "hotel3.webp",
+        price:350.000,
+        description:"The Ritz-Carlton is a luxury hotel renowned for its elegance, exceptional service, and refined sophistication. Located in major cities and exotic destinations worldwide, The Ritz-Carlton brand is synonymous with opulence, offering lavish accommodations with meticulously designed interiors, state-of-the-art amenities, and stunning views. Each hotel is characterized by its blend of classic and contemporary styles, creating a warm, inviting atmosphere. Guests can enjoy world-class dining, rejuvenating spa treatments, and personalized services. The attention to detail, commitment to excellence, and unforgettable guest experiences set The Ritz-Carlton apart as a premier destination for discerning travelers."
+    },
 ];
 // đẩy mảng product vào local
 function Save(){

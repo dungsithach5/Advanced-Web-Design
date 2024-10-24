@@ -12,3 +12,5 @@ employeeSalaries.delete('Tom');
 employeeSalaries.forEach((salary, employee) => {
     console.log(`${employee}: $${salary}`);
 });
+
+console.log(employeeSalaries)

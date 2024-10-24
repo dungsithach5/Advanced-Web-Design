@@ -25,7 +25,7 @@ var productAdmin = function(){
     document.getElementById("product-admin").innerHTML += listhotel1;
     // Save();
 }
-var addProduct = function(){
+var addProduct = function(){ 
     var Product = {
         id :"R"+parseInt( hotel.length+1),
         name : document.getElementById("name").value,
