@@ -1,15 +1,9 @@
 function fetchDataFromAPI(callback) {
-    const apiUrl = 'https://pokeapi.co/api/v2/pokemon/pikachu';
-  
-    fetch(apiUrl)
+  fetch('https://6717a745b910c6a6e0294dfb.mockapi.io/api/v1/khachsan')
       .then(response => response.json())
-      .then(data => {
-        callback(null, data);
-      })
-      .catch(error => {
-        callback(error, null);
-      });
-  }
+      .then(data => callback(null, data))
+      .catch(error => callback(error, null));
+}
   
   function handleAPIData(error, data) {
     if (error) {

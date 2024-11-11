@@ -85,7 +85,7 @@ function deleteHotelFromAPI(id, callback) {
 
 // Hàm xác nhận xóa sản phẩm
 function deleteHotel(id) {
-    if (confirm('Bạn có chắc chắn muốn xóa sản phẩm này?')) {
+    if (confirm('Bạn có chắc chắn muốn xóa khách sạn này?')) {
         deleteHotelFromAPI(id, handleDeleteHotel);
     }
 }
