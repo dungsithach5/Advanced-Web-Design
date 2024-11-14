@@ -21,4 +21,4 @@ resolve(results);
 
 module.exports = {			
 	saveSquareData,			
-	};			
+};			
