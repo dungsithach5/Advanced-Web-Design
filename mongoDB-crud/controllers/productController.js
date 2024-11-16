@@ -1,53 +1,45 @@
-const Product = require('../models/productModel');
+const categoryModel = require("../models/category.model");
 
-const productController = {
-getAllProducts: async (req, res) => {
-    try {
-      const products = await Product.find();
-      res.render('products/index', { products });
-    } catch (error) {
-      res.status(500).send('Error fetching products');
-    }
-},
+const categoryController = {
+    createCategory: async (req, res) => {
+        const body = req.body;
+        try {
+            const newCategory = await categoryModel.create(body);
+            res.status(201).json(newCategory);
+        } catch (error) {
+            res.status(500).send('Error creating category');
+        }
+    },
 
-getProductById: async (req, res) => {
-    try {
-      const product = await Product.findById(req.params.id);
-      res.render('products/edit', { product });
-    } catch (error) {
-      res.status(500).send('Error fetching product');
-    }
-},
+    getCategories: async (req, res) => {
+        try {
+            const categories = await categoryModel.find();
+            res.status(200).json(categories);
+        } catch (error) {
+            res.status(500).send('Error fetching categories');
+        }
+    },
 
-createProduct: async (req, res) => {
-    const { name, price, description } = req.body;
-    const product = new Product({ name, price, description });
-    try {
-      await product.save();
-      res.redirect('/products');
-    } catch (error) {
-      res.status(500).send('Error creating product');
-    }
-},
+    updateCategory: async (req, res) => {
+        const id = req.params.id;
+        const body = req.body;
+        try {
+            const updatedCategory = await categoryModel.findByIdAndUpdate(id, body, { new: true });
+            res.status(200).json(updatedCategory);
+        } catch (error) {
+            res.status(500).send('Error updating category');
+        }
+    },
 
-updateProduct: async (req, res) => {
-    const { name, price, description } = req.body;
-    try {
-      await Product.findByIdAndUpdate(req.params.id, { name, price, description });
-      res.redirect('/products');
-    } catch (error) {
-      res.status(500).send('Error updating product');
+    deleteCategory: async (req, res) => {
+        const id = req.params.id;
+        try {
+            const deletedCategory = await categoryModel.findByIdAndDelete(id);
+            res.status(200).json(deletedCategory);
+        } catch (error) {
+            res.status(500).send('Error deleting category');
+        }
     }
-},
-
-deleteProduct: async (req, res) => {
-    try {
-      await Product.findByIdAndDelete(req.params.id);
-      res.redirect('/products');
-    } catch (error) {
-      res.status(500).send('Error deleting product');
-    }
-  }
 };
 
-module.exports = productController;
+module.exports = categoryController;

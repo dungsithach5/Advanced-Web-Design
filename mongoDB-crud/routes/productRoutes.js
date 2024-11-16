@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();											
 const productController = require('../controllers/productController');											
 											
-// Routes cho sản phẩm											
+// Routes cho sản phẩm						
+// router.get("path",function())					
 router.get('/', productController.getAllProducts);											
 router.get('/new', (req, res) => res.render('products/new'));											
 router.get('/:id/edit', productController.getProductById);											

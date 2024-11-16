@@ -1,3 +1,5 @@
+const mongoose = require('mongoose');	
+
 const OrderSchema = new mongoose.Schema({
     customer: { type: String, required: true },
     address: { type: String, required: true },
@@ -7,5 +9,6 @@ const OrderSchema = new mongoose.Schema({
     is_payment: { type: Boolean, required: true },
     status: { type: String, required: true },
     cart_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Cart', required: true }
-  });
-  const Order = mongoose.model('orders', OrderSchema);
+});
+
+module.exports = mongoose.model('orders', OrderSchema);
