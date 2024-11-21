@@ -7,6 +7,7 @@ const router = require("./routers");
 
 // Nhận file controller
 const categoryControllers = require('./controllers/category.controller');	
+const foodControllers = require('./controllers/food.controller');	
 
 const PORT = process.env.PORT || 3000;
 
@@ -27,6 +28,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Controller để render trang EJS
 app.get('/', categoryControllers.getData);	
+app.get('/foods', foodControllers.getData);	
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
